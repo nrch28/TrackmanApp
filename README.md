@@ -4,7 +4,7 @@
 ## Overview 
 This is a R Shiny app designed to help pitchers from high school to the professional level (and their coaches) analyzise their Trackman Data. 
 
-*A Demo version can be found at this link: https://nrch28.shinyapps.io/rd_pitching_app_public/ * (Huge Thanks to Tucker Whitacre for letting me use his data).
+A Demo version can be found at this link: https://nrch28.shinyapps.io/rd_pitching_app_public/ (Huge Thanks to Tucker Whitacre for letting me use his data).
 
 ## How to Use
 First, select the pitcher using the "Select Player" dropdown. After selecting the pitcher, the dates when the pitcher has thrown and pitch types he throws will autopopulate. After selecting desired dates and pitch types, click "Update" to generate visualizations. 
