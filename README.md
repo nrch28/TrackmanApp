@@ -18,14 +18,14 @@ The "Download Live Report" button downloads a pdf report that shows results data
 ## Features 
 ### Tab 1) Movement Plot and Metics Table
 
-  Simple IVB and HB plot that can help get a base understanding of how a pitch moves
+  Simple IVB and HB plot that can help get a base understanding of how a pitch moves.
   
   You can compare two groups of pitches by lasso selecting a group, clicking the "toggle slection group" button, lasso selecting another group, and then clicking the "show comparison" button. This will show a pop up with averages from the two selected groups. 
   
-  From this plot you can also select/deslect pitches from averages calculations in table 
+  From this plot you can also select/deslect pitches from averages calculations in table.
   
   Below the plot is the metrics table that shows pitch type averages for velo, spin, IVB, HB, Extension, Release Height, Release Side, and Stuff+. 
-  The stuff+ model I created is also available on my github
+  The stuff+ model I created is also available on my github.
   
 ### Tab 2) Distributions
 
