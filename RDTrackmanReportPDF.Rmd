@@ -1,0 +1,71 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    toc: false
+    toc_depth: 2
+    number_sections: false
+    #extra_dependencies: ["multicol", "grffile", "pdflscape"]
+params:
+  player_name: "NA"
+  selected_dates: ["2020-01-01", "2020-01-01"]
+  movement_plot: NA
+  metrics_table: NA
+  pitch_loc_chart_static: NA
+  release_plot: NA
+  spin_clock: NA
+  velo_over_time: NA
+  logo_path: NA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(kableExtra)
+```
+
+```{r header_side_by_side, results='asis', echo=FALSE, fig.height=.65}
+library(grid)
+library(gridExtra)
+library(jpeg)
+library(here)
+
+#read logo
+logo <- jpeg::readJPEG(params$logo_path)
+logo_grob <- rasterGrob(logo, interpolate = TRUE)
+
+# Create text grob
+text_grob <- textGrob(
+  paste0(params$player_name, " Trackman Report\n",
+         "Dates: ", 
+         format(min(as.Date(params$selected_dates)), "%B %d, %Y"), " to ", 
+         format(max(as.Date(params$selected_dates)), "%B %d, %Y")),
+  x = 0, just = "left", gp = gpar(fontsize = 12, fontface = "bold")
+)
+
+# Arrange side by side
+grid.arrange(
+  text_grob, logo_grob,
+  ncol = 2,
+  widths = unit.c(unit(3, "null"), unit(1, "null"))
+)
+```
+
+
+```{r results='asis'}
+knitr::kable(params$metrics_table)
+```
+
+```{r movement_release, fig.show = 'hold', out.width='45%', fig.align='center'}
+params$movement_plot
+params$release_plot
+```
+
+```{r pitch_loc_chart_static, echo = FALSE, fig.height = 2}
+params$pitch_loc_chart_static
+```
+
+```{r velo_clock, fig.show='hold', out.width='45%', fig.align='center'}
+params$velo_over_time
+params$spin_clock
+```
+

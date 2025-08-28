@@ -1,0 +1,46 @@
+---
+output: pdf_document
+params:
+  player_name: "NA"
+  Date: "2020-01-01"
+  spray_chart: NA
+  live_loc: NA
+  logo_path: NA
+---
+
+
+```{r header_side_by_side, results='asis', echo=FALSE, warning = FALSE, message = FALSE, fig.height=.65}
+library(grid)
+library(gridExtra)
+library(jpeg)
+library(here)
+
+#read logo
+logo <- jpeg::readJPEG(params$logo_path)
+logo_grob <- rasterGrob(logo, interpolate = TRUE)
+
+# Create text grob
+text_grob <- textGrob(
+  paste0(params$player_name, " Live BP Report\n",
+         "Date: ", params$Date),
+  x = 0, just = "left", gp = gpar(fontsize = 12, fontface = "bold")
+)
+
+# Arrange side by side
+grid.arrange(
+  text_grob, logo_grob,
+  ncol = 2,
+  widths = unit.c(unit(3, "null"), unit(1, "null"))
+)
+```
+
+
+```{r live_loc, echo = FALSE, fig.width = 10, fig.height = 5}
+grid::grid.draw(params$live_loc)
+```
+
+
+```{r spray_chart, echo = FALSE}
+grid::grid.draw(params$spray_chart)
+```
+
