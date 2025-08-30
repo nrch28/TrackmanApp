@@ -4,7 +4,7 @@
 ## Overview 
 This is a R Shiny app designed to help pitchers from high school to the professional level (and their coaches) analyze their Trackman Data.
 
-A Demo version can be found at this link: https://nrch28.shinyapps.io/rd_pitching_app_public/ (Huge thanksto Tucker Whitacre for letting me use his data).
+A Demo version can be found at this link: https://nrch28.shinyapps.io/rd_pitching_app_public/ (Huge thanks to Tucker Whitacre for letting me use his data).
 
 ## How to Use
 
